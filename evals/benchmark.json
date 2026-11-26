@@ -1,0 +1,26 @@
+{
+  "name": "todo_app_v1",
+  "tests_dir": "examples/todo_app/tests",
+  "module": "examples/todo_app/todo.py",
+  "notes": "Hand-labelled ground truth. 'partial' means a test touches the behavior but misses the key case or assertion.",
+  "behaviors": [
+    {"id": "B01", "description": "Adding a task with a title returns a new task with a unique id that is not done.", "expected": "covered"},
+    {"id": "B02", "description": "Adding a task with an empty or blank title raises an error.", "expected": "covered"},
+    {"id": "B03", "description": "Adding a task with a title longer than 100 characters raises an error.", "expected": "uncovered"},
+    {"id": "B04", "description": "Adding an open task with the same title as another open task (case-insensitive) raises a duplicate error.", "expected": "uncovered"},
+    {"id": "B05", "description": "Completing a task marks it as done.", "expected": "covered"},
+    {"id": "B06", "description": "Reopening a completed task marks it as not done again.", "expected": "uncovered"},
+    {"id": "B07", "description": "Deleting a task removes it from the list.", "expected": "covered"},
+    {"id": "B08", "description": "Deleting a task that does not exist raises a not-found error.", "expected": "uncovered"},
+    {"id": "B09", "description": "Getting a task with an unknown id raises a not-found error.", "expected": "covered"},
+    {"id": "B10", "description": "Listing open tasks returns only tasks that are not done.", "expected": "covered"},
+    {"id": "B11", "description": "Listing with an invalid status filter raises an error.", "expected": "uncovered"},
+    {"id": "B12", "description": "Tasks sorted by priority put high priority first.", "expected": "covered"},
+    {"id": "B13", "description": "Tasks with equal priority are sorted by the earliest due date.", "expected": "partial"},
+    {"id": "B14", "description": "Overdue returns open tasks whose due date is in the past.", "expected": "covered"},
+    {"id": "B15", "description": "Completed tasks are never reported as overdue.", "expected": "partial"},
+    {"id": "B16", "description": "Search finds tasks whose title contains the text, ignoring case.", "expected": "partial"},
+    {"id": "B17", "description": "Search with blank text returns no tasks.", "expected": "uncovered"},
+    {"id": "B18", "description": "Filtering by tag returns only tasks with that tag.", "expected": "uncovered"}
+  ]
+}
